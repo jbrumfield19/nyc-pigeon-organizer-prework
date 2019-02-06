@@ -1,10 +1,10 @@
 def nyc_pigeon_organizer(data)
-  data.each_with_object({}) do |(key, h), result|
+  data.each_with_object({}) do |(key, h), hashy|
  	    h.each do |value, names|
       names.each do |name|
-        result[name] ||= {}
-        result[name][key] ||= []
-        result[name][key] << value.to_s
+        hashy[name] ||= {}
+        hashy[name][key] ||= []
+        hashy[name][key] << value.to_s
       end
     end
   end
